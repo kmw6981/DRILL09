@@ -133,3 +133,27 @@ def render(background, sprite):
         y,
     )
     update_canvas()
+
+
+def main():
+    """리소스를 준비하고 입력, 갱신, 렌더링 루프를 실행한다."""
+    global running
+
+    open_canvas(SCREEN_WIDTH, SCREEN_HEIGHT)
+    background = load_image(BACKGROUND_PATH)
+    sprite = load_image(SPRITE_PATH)
+    previous_time = perf_counter()
+
+    try:
+        while running:
+            handle_events()
+            current_time = perf_counter()
+            delta_time = min(current_time - previous_time, MAX_DELTA_TIME)
+            previous_time = current_time
+
+            update_position(delta_time)
+            update_animation(delta_time)
+            render(background, sprite)
+            delay(0.01)
+    finally:
+        close_canvas()

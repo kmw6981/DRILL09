@@ -111,3 +111,10 @@ def update_animation(delta_time):
     while frame_elapsed >= FRAME_INTERVAL:
         frame_elapsed -= FRAME_INTERVAL
         frame = (frame + 1) % FRAME_COUNT
+
+
+def source_row():
+    """현재 상태와 바라보는 방향에 맞는 스프라이트 행을 돌려준다."""
+    if is_moving:
+        return RUN_ROW_RIGHT if facing == 'right' else RUN_ROW_LEFT
+    return IDLE_ROW_RIGHT if facing == 'right' else IDLE_ROW_LEFT

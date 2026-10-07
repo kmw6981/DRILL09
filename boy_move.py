@@ -15,3 +15,6 @@ SPRITE_PATH = 'animation_sheet.png'
 
 FRAME_WIDTH = 100
 FRAME_HEIGHT = 100
+
+
+FRAME_COUNT = 8

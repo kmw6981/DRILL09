@@ -73,3 +73,14 @@ def handle_events():
                 pressed_keys[event.key] = True
         elif event.type == SDL_KEYUP and event.key in pressed_keys:
             pressed_keys[event.key] = False
+
+
+def movement_vector():
+    """눌린 방향키를 정규화된 이동 벡터로 변환한다."""
+    dx = int(pressed_keys[SDLK_RIGHT]) - int(pressed_keys[SDLK_LEFT])
+    dy = int(pressed_keys[SDLK_UP]) - int(pressed_keys[SDLK_DOWN])
+    length = (dx * dx + dy * dy) ** 0.5
+    if length:
+        dx /= length
+        dy /= length
+    return dx, dy

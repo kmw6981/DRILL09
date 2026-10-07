@@ -118,3 +118,18 @@ def source_row():
     if is_moving:
         return RUN_ROW_RIGHT if facing == 'right' else RUN_ROW_LEFT
     return IDLE_ROW_RIGHT if facing == 'right' else IDLE_ROW_LEFT
+
+
+def render(background, sprite):
+    """배경과 현재 애니메이션 프레임을 화면에 그린다."""
+    clear_canvas()
+    background.draw(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+    sprite.clip_draw(
+        frame * FRAME_WIDTH,
+        source_row() * FRAME_HEIGHT,
+        FRAME_WIDTH,
+        FRAME_HEIGHT,
+        x,
+        y,
+    )
+    update_canvas()

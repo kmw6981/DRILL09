@@ -84,3 +84,20 @@ def movement_vector():
         dx /= length
         dy /= length
     return dx, dy
+
+
+def update_position(delta_time):
+    """위치, 이동 상태와 좌우 바라보는 방향을 갱신한다."""
+    global x, y, facing, is_moving
+
+    dx, dy = movement_vector()
+    is_moving = dx != 0 or dy != 0
+    if dx > 0:
+        facing = 'right'
+    elif dx < 0:
+        facing = 'left'
+
+    x += dx * MOVE_SPEED * delta_time
+    y += dy * MOVE_SPEED * delta_time
+    x = min(max(x, HALF_CHARACTER_WIDTH), SCREEN_WIDTH - HALF_CHARACTER_WIDTH)
+    y = min(max(y, HALF_CHARACTER_HEIGHT), SCREEN_HEIGHT - HALF_CHARACTER_HEIGHT)

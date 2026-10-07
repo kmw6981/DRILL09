@@ -18,3 +18,10 @@ FRAME_HEIGHT = 100
 
 
 FRAME_COUNT = 8
+
+
+# 행 인덱스는 스프라이트 시트의 아래쪽을 0으로 센다.
+IDLE_ROW_RIGHT = 3
+IDLE_ROW_LEFT = 2
+RUN_ROW_RIGHT = 1
+RUN_ROW_LEFT = 0

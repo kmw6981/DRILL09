@@ -57,3 +57,19 @@ x = SCREEN_WIDTH / 2
 y = SCREEN_HEIGHT / 2
 frame = 0
 frame_elapsed = 0.0
+
+
+def handle_events():
+    """종료 이벤트와 방향키 눌림 상태를 반영한다."""
+    global running
+
+    for event in get_events():
+        if event.type == SDL_QUIT:
+            running = False
+        elif event.type == SDL_KEYDOWN:
+            if event.key == SDLK_ESCAPE:
+                running = False
+            elif event.key in pressed_keys:
+                pressed_keys[event.key] = True
+        elif event.type == SDL_KEYUP and event.key in pressed_keys:
+            pressed_keys[event.key] = False

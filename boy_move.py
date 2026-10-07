@@ -157,3 +157,7 @@ def main():
             delay(0.01)
     finally:
         close_canvas()
+
+
+if __name__ == '__main__':
+    main()

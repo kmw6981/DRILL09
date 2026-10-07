@@ -101,3 +101,13 @@ def update_position(delta_time):
     y += dy * MOVE_SPEED * delta_time
     x = min(max(x, HALF_CHARACTER_WIDTH), SCREEN_WIDTH - HALF_CHARACTER_WIDTH)
     y = min(max(y, HALF_CHARACTER_HEIGHT), SCREEN_HEIGHT - HALF_CHARACTER_HEIGHT)
+
+
+def update_animation(delta_time):
+    """idle 또는 달리기 프레임을 일정한 간격으로 순환한다."""
+    global frame, frame_elapsed
+
+    frame_elapsed += delta_time
+    while frame_elapsed >= FRAME_INTERVAL:
+        frame_elapsed -= FRAME_INTERVAL
+        frame = (frame + 1) % FRAME_COUNT

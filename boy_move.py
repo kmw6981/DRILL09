@@ -2,3 +2,6 @@
 
 
 from time import perf_counter
+
+
+from pico2d import *

@@ -47,3 +47,7 @@ pressed_keys = {
     SDLK_UP: False,
     SDLK_DOWN: False,
 }
+
+
+facing = 'right'
+is_moving = False

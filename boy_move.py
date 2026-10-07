@@ -5,3 +5,9 @@ from time import perf_counter
 
 
 from pico2d import *
+
+
+SCREEN_WIDTH = 1280
+SCREEN_HEIGHT = 1024
+BACKGROUND_PATH = 'TUK_GROUND.png'
+SPRITE_PATH = 'animation_sheet.png'

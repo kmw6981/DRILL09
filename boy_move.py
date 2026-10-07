@@ -39,3 +39,11 @@ HALF_CHARACTER_HEIGHT = FRAME_HEIGHT / 2
 
 
 running = True
+
+
+pressed_keys = {
+    SDLK_LEFT: False,
+    SDLK_RIGHT: False,
+    SDLK_UP: False,
+    SDLK_DOWN: False,
+}

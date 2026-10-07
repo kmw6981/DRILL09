@@ -88,10 +88,14 @@ def movement_vector():
 
 def update_position(delta_time):
     """위치, 이동 상태와 좌우 바라보는 방향을 갱신한다."""
-    global x, y, facing, is_moving
+    global x, y, facing, is_moving, frame, frame_elapsed
 
     dx, dy = movement_vector()
-    is_moving = dx != 0 or dy != 0
+    next_is_moving = dx != 0 or dy != 0
+    if next_is_moving != is_moving:
+        frame = 0
+        frame_elapsed = 0.0
+    is_moving = next_is_moving
     if dx > 0:
         facing = 'right'
     elif dx < 0:

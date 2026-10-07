@@ -51,3 +51,9 @@ pressed_keys = {
 
 facing = 'right'
 is_moving = False
+
+
+x = SCREEN_WIDTH / 2
+y = SCREEN_HEIGHT / 2
+frame = 0
+frame_elapsed = 0.0
